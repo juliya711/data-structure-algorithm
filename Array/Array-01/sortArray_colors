@@ -1,0 +1,24 @@
+//Dutch national flag algorithm is a sorting algorithm that sorts an array of three distinct values (0, 1, and 2) in linear time and constant space. The algorithm uses three pointers to keep track of the positions of the three values in the array. The low pointer is used to keep track of the position of the first value (0), the mid pointer is used to keep track of the position of the second value (1), and the high pointer is used to keep track of the position of the third value (2). The algorithm iterates through the array and swaps elements based on their values until all elements are sorted.
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int low=0, mid=0, high=nums.size()-1;
+        while(mid<=high){
+            if(nums[mid]==0){
+                swap(nums[low], nums[mid]);
+                low++;
+                mid++;
+            }
+            else if(nums[mid]==1){
+                mid++;
+            }
+            
+            else {
+                swap(nums[mid], nums[high]);
+                high--;
+            }
+        }
+    
+}
+
+};
